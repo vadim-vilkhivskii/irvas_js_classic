@@ -2,7 +2,7 @@
 //*элементу был клик, определяем его индекс, и в зависимости от индекса отображаем нужную информацию
 //*активному названию таба добавляем класс активности 
 
-const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
+const tabs = (headerSelector, tabSelector, contentSelector, activeClass, display = 'block') => {
     const header = document.querySelector(headerSelector),
         tab = document.querySelectorAll(tabSelector),
         content = document.querySelectorAll(contentSelector);
@@ -18,7 +18,7 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
         }
 
     function showTabContent(i = 0) { //отображаем только активный таб
-        content[i].style.display = 'block';
+        content[i].style.display = display;
 
         tab[i].classList.add(activeClass);//добавляем класс активному табу
     }
